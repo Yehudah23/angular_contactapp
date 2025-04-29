@@ -1,0 +1,15 @@
+<p>signin works!</p>
+<div>
+    <div>
+        <input type="email" placeholder="Email" class="form-control" [(ngModel)]="emails">
+    </div>
+    <div>
+        <input type="password" placeholder="password" class="form-control" [(ngModel)]="passwords">
+    </div>
+    <button class="btn btn-success w-100" (click)="signIn()">sign in</button>
+
+
+    <p class="text-center mt-3 text-muted small">
+        Don't have an account? <a routerLink="/enter" class="text-decoration-none">Sign up</a>
+    </p>
+</div>

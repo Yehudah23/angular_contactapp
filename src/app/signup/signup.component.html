@@ -1,0 +1,22 @@
+<p>signup works!</p>
+
+<div>
+    <div>
+        <input type="text" class="form-control" placeholder="input Full Name" [(ngModel)]="fullname">
+    </div>
+    <div>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email">
+    </div>
+    <div>
+        <input type="password" class="form-control" placeholder="password" [(ngModel)]="password">
+    </div>
+    <div>
+        <button class="btn btn-danger w-100 " (click)="signup()" >sign up</button>
+        <p class="text-center mt-3 text-muted small">
+            Already a user? <a routerLink="/open" class="text-decoration-none">Log in </a>
+        </p>
+
+    </div>
+
+    
+</div>

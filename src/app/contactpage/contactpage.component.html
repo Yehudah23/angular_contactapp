@@ -1,0 +1,55 @@
+
+<!-- 
+  <form (ngSubmit)="addContact()" #addContactForm="ngForm" class="card p-4 mb-4 shadow-sm">
+    <h5 class="mb-3">Add New Contact</h5>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Full Name" [(ngModel)]="contactName" name="contactName">
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Phone Number" [(ngModel)]="contactPhone" name="contactPhone">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Email (optional)" [(ngModel)]="contactEmail" name="contactEmail">
+      </div>
+      <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary mt-3">Add Contact</button>
+      </div>
+    </div>
+  </form>
+  
+  <div *ngIf="contacts.length > 0" class="card shadow-sm p-4">
+    <h5 class="mb-3">Saved Contacts</h5>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let contact of contacts">
+        <div>
+          <h6 class="fw-bold mb-1">{{ contact.name }}</h6>
+          <div class="text-muted small">{{ contact.phone }} | {{ contact.email || 'No Email' }}</div>
+        </div>
+       <div class="text-end col-10 mx-auto">
+        <button class="btn btn-sm btn-outline-danger" (click)="editContact(contact)">Edit Contacts</button>
+        <button class="btn btn-sm btn-outline-danger" (click)="deleteContact(contact.id)">Delete</button>
+       </div>
+      </li>
+    </ul>
+  </div>
+  
+ 
+  <form *ngIf="editId !== null" (ngSubmit)="saveEdit()" #editContactForm="ngForm" class="card mt-4 p-4 shadow-sm">
+    <h5 class="mb-3">Edit Contact</h5>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Full Name" [(ngModel)]="editName" name="editName">
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Phone Number" [(ngModel)]="editPhone" name="editPhone">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Email (optional)" [(ngModel)]="editEmail" name="editEmail">
+      </div>
+      <div class="col-12 text-end">
+        <button type="submit" class="btn btn-success mt-3 me-2">Save Changes</button>
+        <button type="button" class="btn btn-secondary mt-3" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+  </form> -->

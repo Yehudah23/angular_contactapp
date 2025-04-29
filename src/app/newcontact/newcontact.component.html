@@ -1,0 +1,60 @@
+<div class="container py-5">
+    <h2 class="mb-4 text-center">📇 Your Contact List</h2>
+  
+    <div class="card p-4 mb-4 shadow-sm">
+      <h5 class="mb-3">Add New Contact</h5>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Full Name" [(ngModel)]="contactName">
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Phone Number" [(ngModel)]="contactPhone">
+        </div>
+        <div class="col-md-6">
+          <input type="email" class="form-control" placeholder="Email (optional)" [(ngModel)]="contactEmail">
+        </div>
+        <div class="col-12 text-end">
+          <button class="btn btn-primary mt-3" (click)="addContact()">Add Contact</button>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="allcontacts.length > 0" class="card shadow-sm p-4">
+      <h5 class="mb-3">Saved Contacts</h5>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let contact of allcontacts">
+          <div>
+            <div class="fw-bold">{{ contact.contact_name}}</div>
+            <div class="text-muted small">{{ contact.contact_name }} | {{ contact.contact_email || 'No Email' }}</div>
+          </div>
+          <div class="ms-auto">
+             <button class="btn btn-sm btn-warning me-2" (click)="editContact(contact)">Edit</button>
+             <button class="btn btn-sm btn-outline-danger" (click)="deleteContact(contact.id)">Delete</button> 
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <p *ngIf="allcontacts.length === 0" class="text-center text-muted mt-4">No contacts added yet.</p>
+    <p>{{msg}}</p>
+  </div>
+  
+  
+   <div *ngIf="editId !== null" class="mt-4 p-3 border">
+    <h5 class="mb-3">Edit Contact</h5>
+    <div class="mb-2">
+      <input type="text" class="form-control" placeholder="Full Name" [(ngModel)]="editName">
+    </div>
+  
+    <div class="mb-2">
+      <input type="text" class="form-control" placeholder="Phone Number" [(ngModel)]="editPhone">
+    </div>
+  
+    <div class="mb-3">
+      <input type="email" class="form-control" placeholder="Email (optional)" [(ngModel)]="editEmail">
+    </div>
+    <div> 
+      <button class="btn btn-primary me-2" (click)="saveEdit()">Save</button> 
+      <button class="btn btn-outline-secondary" (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div> 
